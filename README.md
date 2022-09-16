@@ -20,11 +20,11 @@ Capterra provides a "Best business software. With software reviews, ratings info
 
 ## Tutorial
 
-Check out this blog post on [how to extract data from Capterra with unofficial Capterra API](https://blog.apify.com/how-to-extract-data-from-Capterra-co-without-api/) for more information on the scraper.
+Check out this blog post on [how to extract data from Capterra with unofficial Capterra API](https://blog.apify.com/how-to-scrape-capterra/) for more information on the scraper.
 
 ## Bugs, fixes, updates and changelog
 
-This scraper is under active development. If you have any feature requests, you can create an issue from [here](https://github.com/tugkan/capterra-scraper/issues).
+This scraper is under active development. If you have any feature requests, you can create an issue from [here](https://github.com/epctex/capterra-scraper/issues).
 
 ### Upcoming changes
 
@@ -63,6 +63,8 @@ The input of this scraper should be JSON containing the list of pages o that sho
 | search         | String  | (optional) Keyword that you want to search on Capterra.                                                                                                                                  |
 | endPage        | Integer | (optional) Final number of page that you want to scrape. Default is `Infinite`.                                                                                                          |
 | proxy          | Object  | Proxy configuration.                                                                                                                                                                     |
+| customMapFunction | String  | (optional) Function that takes each objects handle as argument and returns object with executing the function                                                                                                                     |
+
 
 This solution **requires the use of proxy servers**, either your own proxy servers or [Apify Proxy](https://www.apify.com/docs/proxy).
 
