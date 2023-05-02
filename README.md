@@ -16,6 +16,8 @@ Capterra Scraper supports the following features:
 
 -   **Scrape reviews**
 
+-   **Scrape services**
+
 Capterra provides a "Best business software. With software reviews, ratings infographics, and the most comprehensive list of the top". Scraping that content and extracting it in structured format could give you invaluable business insights and an edge over the competition.
 
 ## Tutorial
@@ -31,40 +33,23 @@ This scraper is under active development. If you have any feature requests, you 
 -   Retrieve comparisons.
 -   Enrich reviews and output of the products.
 
-## Setup & usage
-
-You can see how this actor works in these videos:
-
-### Start URLs
-
-Watch how to set up Start URLs for Capterra Scraper [here](https://youtu.be/5UQJOJ0Q5Ws).
-
-[![Apify - Capterra Scraper - Start URLs](https://i.imgur.com/NNYQIW4.png)](https://youtu.be/5UQJOJ0Q5Ws)
-
-You can check the output of this video [here](https://api.apify.com/v2/datasets/cZVwlB36TtAcxQCfX/items?clean=true&format=json).
-
-### Search
-
-Watch how to set up Search for Capterra Scraper [here](https://www.youtube.com/watch?v=xv-k-YkXIRQ).
-
-[![Apify - Capterra Scraper - Search](https://i.imgur.com/fV29q7g.png)](https://www.youtube.com/watch?v=xeOJCSU-0ME)
-
-You can check the output of this video [here](https://api.apify.com/v2/datasets/VWn9Nu1KhxCJjnOma/items?clean=true&format=json).
-
 ## Input parameters
 
-The input of this scraper should be JSON containing the list of pages o that should be visited. Required fields are:
+The input of this scraper should be JSON containing the list of pages o that should be visited. Possible fields are:
 
-| Field          | Type    | Description                                                                                                                                                                              |
-| -------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| startUrls      | Array   | (optional) List of Capterra URLs. You should only provide search or detail URLs.                                                                                                         |
-| includeReviews | Boolean | (optional) Adding reviews into the product objects is optional and by default it is `false`. If you want to scrape the reviews of the companies, then you can set this option as `true`. |
-| maxItems       | Integer | (optional) You can limit scraped products. This should be useful when you search big lists.                                                                                              |
-| search         | String  | (optional) Keyword that you want to search on Capterra.                                                                                                                                  |
-| endPage        | Integer | (optional) Final number of page that you want to scrape. Default is `Infinite`.                                                                                                          |
-| proxy          | Object  | Proxy configuration.                                                                                                                                                                     |
-| customMapFunction | String  | (optional) Function that takes each objects handle as argument and returns object with executing the function                                                                                                                     |
+- `search`: (Required) (Array) Keyword that you want to search on Capterra.
 
+- `startUrls`: (Required) (Array) List of Capterra URLs. You should only provide search or detail URLs.
+
+- `includeReviews`: (Optional) (Boolean) Adding reviews into the product objects is optional and by default it is `false`. If you want to scrape the reviews of the companies, then you can set this option as `true`.
+
+- `endPage`: (Optional) (Number) Final number of page that you want to scrape. Default is `Infinite`. This is applies to all `search` request and `startUrls` individually.
+
+- `maxItems`: (Optional) (Number) You can limit scraped products. This should be useful when you search big lists.
+
+- `proxy`: (Required) (Proxy Object) Proxy configuration.
+
+- `customMapFunction`: (Optional) (String) Function that takes each objects handle as argument and returns object with executing the function.
 
 This solution **requires the use of proxy servers**, either your own proxy servers or [Apify Proxy](https://www.apify.com/docs/proxy).
 
@@ -86,7 +71,10 @@ Capterra Scraper is optimized to run extremely fast and scrape many as listings 
 {
     "startUrls": [
         "https://www.capterra.com/p/210664/CRYENGINE/",
-        "https://www.capterra.com/search/?search=game%20engine"
+        "https://www.capterra.com/search/?search=game%20engine",
+        "https://www.capterra.com/services/sp/178/accenture/",
+        "https://www.capterra.com/services/data-analytics/",
+        "https://www.capterra.com/business-intelligence-software/"
     ],
     "search": "Game engine",
     "includeReviews": false,
