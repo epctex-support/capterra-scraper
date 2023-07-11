@@ -1,3 +1,5 @@
+[https://apify.com/epctex/capterra-scraper](https://apify.com/epctex/capterra-scraper?fpr=yhdrb)
+
 ## Features
 
 Capterra doesn't provide a very flexible or free API, but this scraper acts as an unofficial Capterra API to help you extract the data you need, when you need it, and at scale.
@@ -18,13 +20,13 @@ Capterra Scraper supports the following features:
 
 -   **Scrape services**
 
-Capterra provides a "Best business software. With software reviews, ratings infographics, and the most comprehensive list of the top". Scraping that content and extracting it in structured format could give you invaluable business insights and an edge over the competition.
+Capterra provides "Best business software. With software reviews, rating infographics, and the most comprehensive list of the top". Scraping that content and extracting it in a structured format could give you invaluable business insights and an edge over the competition.
 
 ## Tutorial
 
 Check out this blog post on [how to extract data from Capterra with unofficial Capterra API](https://blog.apify.com/how-to-scrape-capterra/) for more information on the scraper.
 
-## Bugs, fixes, updates and changelog
+## Bugs, fixes, updates, and changelog
 
 This scraper is under active development. If you have any feature requests, you can create an issue from [here](https://github.com/epctex/capterra-scraper/issues).
 
@@ -41,21 +43,21 @@ The input of this scraper should be JSON containing the list of pages o that sho
 
 - `startUrls`: (Required) (Array) List of Capterra URLs. You should only provide search or detail URLs.
 
-- `includeReviews`: (Optional) (Boolean) Adding reviews into the product objects is optional and by default it is `false`. If you want to scrape the reviews of the companies, then you can set this option as `true`.
+- `includeReviews`: (Optional) (Boolean) Adding reviews into the product objects is optional and by default, it is `false`. If you want to scrape the reviews of the companies, then you can set this option as `true`.
 
-- `endPage`: (Optional) (Number) Final number of page that you want to scrape. Default is `Infinite`. This is applies to all `search` request and `startUrls` individually.
+- `endPage`: (Optional) (Number) Final number of page that you want to scrape. The default is `Infinite`. This applies to all `search` requests and `startUrls` individually.
 
 - `maxItems`: (Optional) (Number) You can limit scraped products. This should be useful when you search big lists.
 
 - `proxy`: (Required) (Proxy Object) Proxy configuration.
 
-- `customMapFunction`: (Optional) (String) Function that takes each objects handle as argument and returns object with executing the function.
+- `customMapFunction`: (Optional) (String) Function that takes each object's handle as an argument and returns the object with executing the function.
 
 This solution **requires the use of proxy servers**, either your own proxy servers or [Apify Proxy](https://www.apify.com/docs/proxy).
 
 ### Tips
 
-When you want to have a scrape over a specific listing URL, just copy and paste the link as one of the **startURL**.
+When you want to scrape over a specific listing URL, just copy and paste the link as one of the **startURL**.
 
 If you would like to scrape only the first page of a list, then add the link for the page and have the `endPage` as 1.
 
@@ -63,7 +65,7 @@ Please also keep in mind that the `includeReviews` parameter will add multiple r
 
 ## Compute unit consumption
 
-Capterra Scraper is optimized to run extremely fast and scrape many as listings as possible, so it forefronts all listing detail requests. If the actor doesn't get blocked very often, it will scrape 100 listings in 2 minutes and consume ~0.07-0.08 compute units.
+Capterra Scraper is optimized to run extremely fast and scrape many listings as possible, so it forefronts all listing detail requests. If the actor doesn't get blocked very often, it will scrape 100 listings in 2 minutes and consume ~0.07-0.08 compute units.
 
 ### Capterra Scraper input example
 
@@ -97,7 +99,7 @@ If you provide incorrect input to the actor, it will immediately stop with a fai
 
 During the run, the actor stores results into a dataset. Each item is a separate item in the dataset.
 
-You can manage the results in any languague (Python, PHP, Node.js/NPM). See the FAQ or <a href="https://www.apify.com/docs/api" target="blank">our API reference</a> to learn more about getting results from this Capterra actor.
+You can manage the results in any language (Python, PHP, Node.js/NPM). See the FAQ or <a href="https://www.apify.com/docs/api" target="blank">our API reference</a> to learn more about getting results from this Capterra actor.
 
 ## Scraped Capterra product example
 
@@ -1673,4 +1675,4 @@ The structure of each item in Capterra product looks like this:
 ```
 
 ## Contact
-Please visit us through [epctex.com](https://epctex.com) to see all the products that is available for you. If you are looking for any custom integration or so, please reach out to us through the chat box in [epctex.com](https://epctex.com). In need of support? [devops@epctex.com](mailto:devops@epctex.com) is at your service.
+Please visit us through [epctex.com](https://epctex.com) to see all the products that are available for you. If you are looking for any custom integration or so, please reach out to us through the chat box in [epctex.com](https://epctex.com). In need of support? [devops@epctex.com](mailto:devops@epctex.com) is at your service.
